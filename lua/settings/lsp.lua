@@ -7,7 +7,7 @@ local mason_lspconfig = require("mason-lspconfig")
 -- Enable Mason (LSP Installer)
 mason.setup()
 mason_lspconfig.setup({
-  ensure_installed = { "lua_ls", "ts_ls", "html", "cssls" }, -- Install these servers
+  ensure_installed = { "lua_ls", "ts_ls","clangd", "html", "cssls" }, -- Install these servers
 })
 
 -- Common on_attach function (Keymaps for LSP)
@@ -26,6 +26,13 @@ end
 mason_lspconfig.setup_handlers({
   function(server_name)
     lspconfig[server_name].setup({
+      on_attach = on_attach,
+      capabilities = require("cmp_nvim_lsp").default_capabilities(),
+    })
+  end,
+	 ["clangd"] = function()
+    lspconfig.clangd.setup({
+      cmd = { "clangd", "--background-index", "--clang-tidy" },
       on_attach = on_attach,
       capabilities = require("cmp_nvim_lsp").default_capabilities(),
     })
