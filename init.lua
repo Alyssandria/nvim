@@ -1,14 +1,8 @@
--- SETTINGS
-require ("settings.init")
+-- CORE OPTIONS
+require("core.options")
 
--- KEYMAPS
-require("settings.keymaps")
+-- PLUGIN MANAGER
+require("core.lazy")
 
--- PACKAGE MANAGER
-require("config.lazy")
-
--- LSP
-require("settings.lsp")
-
-
-
+-- PLUGIN KEYMAPS
+require("core.plugin-keymaps")
