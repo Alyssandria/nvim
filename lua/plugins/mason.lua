@@ -1,4 +1,5 @@
 profile = os.getenv("NVIMPROFILE")
+
 return {
     "williamboman/mason.nvim",
     dependencies = {
@@ -6,6 +7,6 @@ return {
     	"neovim/nvim-lspconfig",
     },
     config = function() 
-      require("web.lsp")
+      require("profile." .. profile .. ".lsp")
     end
 }
