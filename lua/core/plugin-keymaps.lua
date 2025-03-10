@@ -7,3 +7,15 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 
 -- OIL
 vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
+
+
+-- BUFFERLINE
+vim.keymap.set("n", "<Leader>bn", "<Cmd>BufferLineCycleNext<CR>", { silent = true, desc = "Next buffer" })
+vim.keymap.set("n", "<Leader>bp", "<Cmd>BufferLineCyclePrev<CR>", { silent = true, desc = "Previous buffer" })
+vim.keymap.set("n", "<Leader>bd", "<Cmd>bd<CR>", { silent = true, desc = "Close buffer" })
+
+-- TOGGLETERM
+vim.keymap.set("n", "<Leader>th", function()
+  require("toggleterm").toggle(1, 15, nil, "horizontal") -- First terminal
+  require("toggleterm").toggle(2, 15, nil, "horizontal") -- Second terminal
+end, { silent = true, desc = "Open two horizontal (stacked) terminals" })

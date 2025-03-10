@@ -1,3 +1,4 @@
+local lsp_utils = require("utils.util")
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
@@ -12,6 +13,7 @@ mason_lspconfig.setup({
 require("mason-lspconfig").setup_handlers({
 function (server_name)
     lspconfig[server_name].setup({
+      on_attach = lsp_utils.on_attach,
       capabilities = capabilities
     })
 end,
