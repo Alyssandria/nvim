@@ -11,7 +11,7 @@ return {
     extensions = {
       patterns = {
         javascript = { "clsx%(([^)]+)%)", "classnames%(([^)]+)%)" },
-        typescript = { "clsx%(([^)]+)%)", "classnames%(([^)]+)%)", "cn%(([^)]+)%)" },
+        typescript = { "clsx%(([^)]+)%)", "classnames%(([^)]+)%)", "cn%(([^)]+)%)", "cva%(([^)]+)%)" },
       }
     }
   }
