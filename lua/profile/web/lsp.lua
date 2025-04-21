@@ -7,7 +7,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 mason.setup()
 
 mason_lspconfig.setup({
-  ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "cssls", "html" }
+  ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "cssls", "html", "jsonls" }
 })
 
 require("mason-lspconfig").setup_handlers({
