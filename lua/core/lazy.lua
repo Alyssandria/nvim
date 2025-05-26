@@ -15,14 +15,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local profile = os.getenv("NVIMPROFILE")
-
-
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
     { import = "plugins" },
-    (profile and { import = "profile." .. profile .. ".plugins" }) or {},
   },
   install = { colorscheme = { "habamax" } },
 })
