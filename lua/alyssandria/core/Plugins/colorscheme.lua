@@ -1,7 +1,12 @@
 return {
-	"rebelot/kanagawa.nvim",
+	"metalelf0/black-metal-theme-neovim",
+	lazy = false,
+	priority = 1000,
 	config = function()
-		require("kanagawa").setup({})
-		vim.cmd("colorscheme kanagawa")
+		require("black-metal").setup({
+			theme = "immortal",
+			-- optional configuration here
+		})
+		require("black-metal").load()
 	end,
 }
